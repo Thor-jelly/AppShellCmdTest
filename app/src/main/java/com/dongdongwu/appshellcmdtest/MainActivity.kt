@@ -11,12 +11,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("123===", "ping--start")
-        val isSuccess = ping("www.baidu.com")
-        Log.d("123===", "isSuccess=$isSuccess")
-        Log.d("123===", "ping---end")
+        Thread{
+            Log.d("123===", "ping--start")
+            val isSuccess = ping("www.baidu.com")
+            Log.d("123===", "isSuccess=$isSuccess")
+            Log.d("123===", "ping---end")
+        }.start()
 
-        shellExec()
+
+      //  shellExec()
     }
 
     fun shellExec() {
